@@ -1,6 +1,8 @@
 # new-ceylinco-cdm-deployment
 
-Production build output for the Ceylinco CDM admin portal.
+Dated publish folders for the Ceylinco CDM admin portal and API.
 
-- Frontend API: `http://192.168.119.62:5172`
-- Serve the published static files from this repository on `http://192.168.119.62`
+- `admin_YYYYMMDD_N/` — Vue `dist` (serve on `http://192.168.119.62`)
+- `core_YYYYMMDD_N/` — `dotnet publish` output (Kestrel `http://0.0.0.0:5172`)
+
+Put real DB, JWT, SMS, and SMTP values in a server-only `appsettings.Production.json`. Do not commit passwords.
