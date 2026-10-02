@@ -1,0 +1,1 @@
+import{En as e,Kn as t,jn as n,yr as r}from"./_plugin-vue_export-helper-W18HbobK.js";import{d as i,o as a}from"./reportTabs-BIaG60hZ.js";var o=n({__name:`ChequeReportsView`,setup(n){return(n,o)=>(t(),e(i,{title:`Cheque Reports`,subtitle:`Cheque history and detail lines.`,tabs:r(a)},null,8,[`tabs`]))}});export{o as default};

@@ -1,0 +1,1 @@
+import{En as e,Kn as t,jn as n,yr as r}from"./_plugin-vue_export-helper-W18HbobK.js";import{d as i,i as a}from"./reportTabs-BIaG60hZ.js";var o=n({__name:`AtmReportsView`,setup(n){return(n,o)=>(t(),e(i,{title:`ATM — Cash Withdrawal`,subtitle:`ATM channel reports from atm_daily_activity.`,tabs:r(a)},null,8,[`tabs`]))}});export{o as default};
