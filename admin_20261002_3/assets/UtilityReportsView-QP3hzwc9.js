@@ -1,0 +1,1 @@
+import{En as e,Kn as t,jn as n,yr as r}from"./_plugin-vue_export-helper-W18HbobK.js";import{d as i,u as a}from"./reportTabs-B67KKwt5.js";var o=n({__name:`UtilityReportsView`,setup(n){return(n,o)=>(t(),e(i,{title:`Utility`,subtitle:`Utility payment transactions from daily_activity.`,tabs:r(a)},null,8,[`tabs`]))}});export{o as default};
