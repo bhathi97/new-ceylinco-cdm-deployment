@@ -1,0 +1,1 @@
+import{En as e,Kn as t,jn as n,yr as r}from"./_plugin-vue_export-helper-W18HbobK.js";import{d as i,r as a}from"./reportTabs-BCpMy-g1.js";var o=n({__name:`AgentDepositReportsView`,setup(n){return(n,o)=>(t(),e(i,{title:`Agent Deposit`,subtitle:`Kiosk agent deposit report (Laravel agentDeposit).`,tabs:r(a)},null,8,[`tabs`]))}});export{o as default};
