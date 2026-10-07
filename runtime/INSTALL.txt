@@ -1,0 +1,13 @@
+ASP.NET Core Runtime 10.0.12 for Red Hat / Linux x64 (offline).
+No dnf and no internet required. This tarball includes the .NET runtime.
+
+On the server, from the git clone:
+
+sudo mkdir -p /usr/share/dotnet
+sudo tar -xzf runtime/aspnetcore-runtime-10.0.12-linux-x64.tar.gz -C /usr/share/dotnet
+sudo ln -sf /usr/share/dotnet/dotnet /usr/bin/dotnet
+dotnet --list-runtimes
+
+Expected:
+Microsoft.AspNetCore.App 10.0.12
+Microsoft.NETCore.App 10.0.12
