@@ -1,0 +1,613 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CentralizedLogger</name>
+    </assembly>
+    <members>
+        <member name="T:CentralizedLogger.CentralizedLog">
+            <summary>
+            Responsible to push log messages to the centralized logger
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.#ctor(System.String,System.String)">
+            <summary>
+            Use to add log messages to the centralized log
+            </summary>
+            <param name="serviceName">Microservice name</param>
+            <param name="gRpcHost">gRPC host url</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Use to add log messages to the centralized log
+            </summary>
+            <param name="serviceName">Microservice name</param>
+            <param name="gRpcHost">gRPC host url</param>
+            <param name="isEnabled">Enable logging</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Info(System.String,System.String,System.Object)">
+            <summary>
+            Use to add a Info type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Info(System.String,System.String[],System.Object)">
+            <summary>
+            Use to add a Info type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Warning(System.String,System.String,System.Object)">
+            <summary>
+            Use to add a Warning type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Warning(System.String,System.String[],System.Object)">
+            <summary>
+            Use to add a Warning type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Error(System.String,System.String,System.Object)">
+            <summary>
+            Use to add a Error type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Error(System.String,System.String[],System.Object)">
+            <summary>
+            Use to add a Error type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Debug(System.String,System.String,System.Object)">
+            <summary>
+            Use to add a Debug type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.CentralizedLog.Debug(System.String,System.String[],System.Object)">
+            <summary>
+            Use to add a Debug type log entry
+            </summary>
+            <param name="traceId">request trace ID</param>
+            <param name="topic">message topic</param>
+            <param name="data">message data</param>
+        </member>
+        <member name="M:CentralizedLogger.Configs.ElasticSearchConfig.IsElasticSearchEnabled">
+            <summary>
+            Use to determine elastic search is enable or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CentralizedLogger.ConsoleLog">
+            <summary>
+            Responsible to push log messages to the ELK stack's logstash via elastic search
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Info(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Info(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Warning(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Warning(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Error(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Error(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Debug(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ConsoleLog.Debug(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.Extensions.ServiceCollectionExtensions.AddCentralizedLogger(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.Boolean)">
+            <summary>
+            Use to add a singleton instance of the CentralizedLog to the service collection
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="serviceName">Microservice name</param>
+            <param name="gRpcHost">gRPC host url</param>
+            <param name="isEnabled">determine centralized logging is enabled or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:CentralizedLogger.Extensions.ServiceCollectionExtensions.AddCentralizedLogger(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,CentralizedLogger.Configs.ElasticSearchConfig)">
+            <summary>
+            Use to add a singleton instance of the Logstash log as ICentralizedLog to the service collection
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="serviceName">Microservice name</param>
+            <param name="config">ElasticSearchConfig</param>
+            <returns></returns>
+        </member>
+        <member name="M:CentralizedLogger.Extensions.ServiceCollectionExtensions.AddCentralizedLogger(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            Use to add a singleton instance of the Console log as ICentralizedLog to the service collection
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="serviceName">Microservice name</param>
+            <returns></returns>
+        </member>
+        <member name="M:CentralizedLogger.Extensions.ServiceCollectionExtensions.AddCentralizedLogger(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String)">
+            <summary>
+            Use to add a singleton instance of the SelfStore log as ICentralizedLog to the service collection
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="serviceName">Microservice name</param>
+            <param name="applicationName">Application name</param>
+            <returns></returns>
+        </member>
+        <member name="M:CentralizedLogger.Grpc.Clients.CentralizedLogGrpcClient.AddCentralizedLog(CentralizedLogProtoService.CentralizedLog)">
+            <summary>
+            Use to add centralized log to the centralized logger
+            </summary>
+            <param name="centralizedLog"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CentralizedLogger.Helpers.BasicLogMessages">
+            <summary>
+            Provides basic log messages for use in a centralized logging system.
+            </summary>
+        </member>
+        <member name="F:CentralizedLogger.Helpers.BasicLogMessages.Start">
+            <summary>
+            Represents the start of a process or operation.
+            </summary>
+        </member>
+        <member name="F:CentralizedLogger.Helpers.BasicLogMessages.End">
+            <summary>
+            Represents the end of a process or operation.
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.Helpers.BasicLogMessages.Exception(System.String)">
+            <summary>
+            Generates a log message for an exception with the specified identifier.
+            </summary>
+            <param name="identifier">A unique identifier for the exception.</param>
+            <returns>A formatted string containing the exception message.</returns>
+        </member>
+        <member name="T:CentralizedLogger.Helpers.RequestTrace">
+            <summary>
+            This class is responsible for generating unique request trace ID
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Info(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Info(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Warning(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Warning(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Error(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Error(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Debug(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.ICentralizedLog.Debug(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="T:CentralizedLogger.LogstashLog">
+            <summary>
+            Responsible to push log messages to the ELK stack's logstash via elastic search
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Info(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Info(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Warning(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Warning(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Error(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Error(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Debug(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.LogstashLog.Debug(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="T:CentralizedLogger.Middlewares.TraceableRequestMiddleware">
+            <summary>
+            This middleware is used to add trace id to the incoming HTTP request
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.Middlewares.TraceableRequestMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Used to add the TraceableRequestMiddleware middleware to the pipeline.
+            Add trace ID if the trace ID field is not available or empty in the incoming request body.
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:CentralizedLogger.Middlewares.TraceableRequestMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,System.Boolean)">
+            <summary>
+            Used to add the TraceableRequestMiddleware middleware to the pipeline. Add trace ID if the trace ID field is not
+            available or empty in the incoming request body based on the enforcedTraceId parameter.
+            
+            * if enforcedTraceId is set to true, always add a trace ID to the incoming request body. 
+            * if enforcedTraceId is false, add the trace ID only if it is not available or empty.
+            </summary>
+            <param name="next"></param>
+            <param name="enforcedTraceId"></param>
+        </member>
+        <member name="M:CentralizedLogger.Middlewares.TraceableRequestMiddleware.AddTraceId(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            This method is used to add unique traceID to the incoming request
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CentralizedLogger.Middlewares.TraceableRequestMiddlewareExtension">
+            <summary>
+            Static extension class to define extension method that can be used to add traceable request middleware
+            to the application builder
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.Middlewares.TraceableRequestMiddlewareExtension.UseTraceableRequest(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            IApplication builder extension method to add TraceableRequestMiddleware to the builder
+            </summary>
+            <param name="builder">IApplicationBuilder</param>
+            <returns>IApplicationBuilder with added TraceableRequestMiddleware</returns>
+        </member>
+        <member name="M:CentralizedLogger.Middlewares.TraceableRequestMiddlewareExtension.UseTraceableRequest(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Boolean)">
+            <summary>
+            IApplication builder extension method to add TraceableRequestMiddleware to the builder
+            * if enforcedTraceId is set to true, always add a trace ID to the incoming request body. 
+            * if enforcedTraceId is false, add the trace ID only if it is not available or empty.
+            </summary>
+            <param name="builder">IApplicationBuilder</param>
+            <param name="enforcedTraceId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CentralizedLogger.SelfStoreLog">
+            <summary>
+            This can be used to add centralized logs to the console and write to log file
+            </summary>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.#ctor(System.String,System.String)">
+            <summary>
+             initialize self-store log instance with application name and microservice name
+            </summary>
+            <param name="applicationName">Application name</param>
+            <param name="serviceName">Microservice name</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Info(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Info(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of INFO to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Warning(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Warning(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of WARNING to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Error(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Error(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of ERROR to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Debug(System.String,System.String,System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="M:CentralizedLogger.SelfStoreLog.Debug(System.String,System.String[],System.Object)">
+            <summary>
+            This can be used to add a log entry of the type of DEBUG to the centralized log
+            </summary>
+            <param name="traceId">Log trace ID</param>
+            <param name="topic">Topic of the log entry</param>
+            <param name="data">Data to be added to the log</param>
+        </member>
+        <member name="T:CentralizedLogProtoService.CentralizedLogProtoDefinitionReflection">
+            <summary>Holder for reflection information generated from Grpc/Definitions/CentralizedLogProtoDefinition.proto</summary>
+        </member>
+        <member name="P:CentralizedLogProtoService.CentralizedLogProtoDefinitionReflection.Descriptor">
+            <summary>File descriptor for Grpc/Definitions/CentralizedLogProtoDefinition.proto</summary>
+        </member>
+        <member name="T:CentralizedLogProtoService.AddCentralizedLogFeedBack">
+            <summary>
+            an empty message
+            </summary>
+        </member>
+        <member name="F:CentralizedLogProtoService.AddCentralizedLogFeedBack.SuccessFieldNumber">
+            <summary>Field number for the "success" field.</summary>
+        </member>
+        <member name="F:CentralizedLogProtoService.CentralizedLog.LevelFieldNumber">
+            <summary>Field number for the "level" field.</summary>
+        </member>
+        <member name="F:CentralizedLogProtoService.CentralizedLog.ServiceFieldNumber">
+            <summary>Field number for the "service" field.</summary>
+        </member>
+        <member name="F:CentralizedLogProtoService.CentralizedLog.TopicFieldNumber">
+            <summary>Field number for the "topic" field.</summary>
+        </member>
+        <member name="F:CentralizedLogProtoService.CentralizedLog.DataFieldNumber">
+            <summary>Field number for the "data" field.</summary>
+        </member>
+        <member name="F:CentralizedLogProtoService.CentralizedLog.TraceIdFieldNumber">
+            <summary>Field number for the "traceId" field.</summary>
+        </member>
+        <member name="T:CentralizedLogProtoService.CentralizedLogProtoService">
+            <summary>
+            definition of the service
+            </summary>
+        </member>
+        <member name="P:CentralizedLogProtoService.CentralizedLogProtoService.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceBase">
+            <summary>Base class for server-side implementations of CentralizedLogProtoService</summary>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceBase.AddCentralizedLog(CentralizedLogProtoService.CentralizedLog,Grpc.Core.ServerCallContext)">
+            <summary>
+            define gRPC methods here
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
+        </member>
+        <member name="T:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient">
+            <summary>Client for CentralizedLogProtoService</summary>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for CentralizedLogProtoService</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for CentralizedLogProtoService that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.AddCentralizedLog(CentralizedLogProtoService.CentralizedLog,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            define gRPC methods here
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.AddCentralizedLog(CentralizedLogProtoService.CentralizedLog,Grpc.Core.CallOptions)">
+            <summary>
+            define gRPC methods here
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.AddCentralizedLogAsync(CentralizedLogProtoService.CentralizedLog,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            define gRPC methods here
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.AddCentralizedLogAsync(CentralizedLogProtoService.CentralizedLog,Grpc.Core.CallOptions)">
+            <summary>
+            define gRPC methods here
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.BindService(CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceBase)">
+            <summary>Creates service definition that can be registered with a server</summary>
+            <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+        </member>
+        <member name="M:CentralizedLogProtoService.CentralizedLogProtoService.BindService(Grpc.Core.ServiceBinderBase,CentralizedLogProtoService.CentralizedLogProtoService.CentralizedLogProtoServiceBase)">
+            <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+            Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+            <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+            <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+        </member>
+    </members>
+</doc>
