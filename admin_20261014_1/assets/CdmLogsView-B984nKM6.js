@@ -1,0 +1,1 @@
+import{En as e,Mn as t,br as n,qn as r}from"./_plugin-vue_export-helper-kTrD95Pv.js";import{a as i,d as a}from"./reportTabs-BuL8ICvE.js";var o=t({__name:`CdmLogsView`,setup(t){return(t,o)=>(r(),e(a,{title:`CDM Logs`,subtitle:`Terminal log files from the CDM log store.`,tabs:n(i)},null,8,[`tabs`]))}});export{o as default};
