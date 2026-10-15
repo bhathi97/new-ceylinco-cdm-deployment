@@ -1,0 +1,1 @@
+import{En as e,Mn as t,br as n,qn as r}from"./_plugin-vue_export-helper-kTrD95Pv.js";import{c as i,d as a}from"./reportTabs-BFNSW3Xd.js";var o=t({__name:`DowntimeView`,setup(t){return(t,o)=>(r(),e(a,{title:`Downtime`,subtitle:`CDM downtime host and service notifications.`,tabs:n(i)},null,8,[`tabs`]))}});export{o as default};
