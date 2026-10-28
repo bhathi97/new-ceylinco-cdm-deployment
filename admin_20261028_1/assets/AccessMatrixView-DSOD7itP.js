@@ -1,0 +1,1 @@
+import{En as e,Mn as t,br as n,qn as r}from"./_plugin-vue_export-helper-kTrD95Pv.js";import{d as i,t as a}from"./reportTabs-Bu2gPHgm.js";var o=t({__name:`AccessMatrixView`,setup(t){return(t,o)=>(r(),e(i,{title:`Access Rights Matrix`,subtitle:`User / role / action matrix.`,tabs:n(a)},null,8,[`tabs`]))}});export{o as default};

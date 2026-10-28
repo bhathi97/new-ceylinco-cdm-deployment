@@ -1,0 +1,1 @@
+import{En as e,Mn as t,br as n,qn as r}from"./_plugin-vue_export-helper-kTrD95Pv.js";import{d as i,n as a}from"./reportTabs-Bu2gPHgm.js";var o=t({__name:`ActivityLogView`,setup(t){return(t,o)=>(r(),e(i,{title:`Activity Log`,subtitle:`Administrator activity audit trail.`,tabs:n(a)},null,8,[`tabs`]))}});export{o as default};
